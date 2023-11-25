@@ -1,0 +1,127 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jun 22, 2022 at 07:35 PM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `lmsdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+CREATE TABLE IF NOT EXISTS `login` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`username`, `password`) VALUES
+('admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE IF NOT EXISTS `student` (
+  `fname` varchar(30) NOT NULL,
+  `lname` varchar(30) NOT NULL,
+  `pass1` int(30) NOT NULL,
+  `username1` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`fname`, `lname`, `pass1`, `username1`) VALUES
+('abebe', 'alemu', 12, 'al'),
+('kebede', 'ahmend', 22, 'ka'),
+('aa', 'aa', 4, 'aa'),
+('ww', 'll', 23, 'wl'),
+('Almaz', 'Ahmed', 56, 'alz'),
+('zeberga', 'Ali', 34, 'za'),
+('ti', 'ti', 45, 'tt'),
+('yyy', 'ttt', 8, 'yt'),
+('selam', 'Belayneh', 12, 'sl'),
+('xx', 'vv', 12, 'we');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblbook`
+--
+
+DROP TABLE IF EXISTS `tblbook`;
+CREATE TABLE IF NOT EXISTS `tblbook` (
+  `ID` int(11) NOT NULL,
+  `Title` varchar(50) NOT NULL,
+  `Author` varchar(50) NOT NULL,
+  `Publisher` varchar(50) NOT NULL,
+  `PublisheDate` varchar(11) NOT NULL,
+  `ShelfNumber` varchar(20) NOT NULL,
+  `ColumnNumber` varchar(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblbook`
+--
+
+INSERT INTO `tblbook` (`ID`, `Title`, `Author`, `Publisher`, `PublisheDate`, `ShelfNumber`, `ColumnNumber`) VALUES
+(18, 'Dertogada', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(17, 'Ramathohara', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(13, 'Fiker eske mekaber', 'Hadis Alemayehu', 'Birhan enna selam matemiya bet', '12/3/2000', '7', '6'),
+(14, 'Aleweledm', 'Hadis Alemayehu', 'Birhan en selam matemiya bet', '12/11/2000', '8', '7'),
+(15, 'Emegua', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(12, 'ttt', 'eee', 'tt', '12/12/2000', '6', '4'),
+(11, 'Adventure of Tom sawyer', 'Mark Twian', 'Hollywod', '22/1/200', '3', '2'),
+(18, 'Yeogaden Demetoch', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(19, 'Merbebet', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(21, 'Ye Kend Awta Guzo', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(22, 'zamara', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(23, 'Kibur Dingay', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '8', '7'),
+(23, 'Kibur Dingay', 'Yismaeke Work', 'Birhan ena selam matemiya bet', '12/12/2002', '9', '7');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblbookloan`
+--
+
+DROP TABLE IF EXISTS `tblbookloan`;
+CREATE TABLE IF NOT EXISTS `tblbookloan` (
+  `ID` int(11) NOT NULL,
+  `BookID` int(11) NOT NULL,
+  `LoanDate` date NOT NULL,
+  `ReturnDate` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
